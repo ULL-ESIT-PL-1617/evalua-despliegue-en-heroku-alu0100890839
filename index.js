@@ -1,12 +1,10 @@
-var express = require('express')
-var app = express()
-var path = require('path');
+var express = require('express');
+var app = express();
 
-app.use(express.static('gh-pages'));
+app.set('port', (process.env.PORT || 5000));
 
-var server = app.listen(80, function() {
-  var host = server.address().address
-  var port = server.address().port
+app.use(express.static(__dirname + '/gh-pages'));
 
-  console.log('Server listening at http://%s:%s', host, port)
-})
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
