@@ -2,6 +2,8 @@
 
 En este libro vamos a explicar cuáles son las herramientas utilizadas en la práctica 1 de **Procesadores de Lenguajes** así como el uso básico de las mismas.
 
+Esto está modificado por pablo en la práctica del jueves
+
 ## Índice
 
 * [Introduction](README.md)

@@ -30,6 +30,21 @@ gulp.task('serve', function() {
 
 });
 
+gulp.task('heroku', function() {
+        var exec = require('child_process').exec;
+        var child = exec('sudo gitbook build ./txt ./gh-pages && git add . && git commit -m "update" && git push heroku master', function(error, stdout, stderr) {
+
+
+              if (error) {
+                   console.error(`exec error: ${error}`);
+                   return;
+                }
+                console.log(`stdout: ${stdout}`);
+                console.log(`stderr: ${stderr}`);
+        });
+
+});
+
 gulp.task('deploy', function() {
         var exec = require('child_process').exec;
         var child = exec('sudo node ./scripts/deploy-gitbook.js', function(error, stdout, stderr) {
